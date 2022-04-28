@@ -9,12 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class DynamicControl {
+public class DynamicControl implements Urls{
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.getChromedriver();
 
         try{
-            driver.get("https://the-internet.herokuapp.com/dynamic_controls");
+            driver.get(baseUrl.concat(dynamicControl));
             //remove checkbox
             WebElement checkboxBtnElem = driver.findElement(By.tagName("input"));
             WebElement removeBtnElem = driver.findElement(By.tagName("button"));

@@ -5,14 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.sql.SQLOutput;
 import java.util.List;
 
-public class Login_Form {
+public class Login_Form implements Urls{
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.getChromedriver();
         try{
-            driver.get("https://the-internet.herokuapp.com/login");
+            driver.get(baseUrl.concat(login));
 
             By usernameSel = By.id("username");
             By passwordSel = By.cssSelector("#password");
